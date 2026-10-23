@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banana Shark — The Encyclopaedia of the Brine Groves</title>
+<meta name="description" content="Musaselachus profundus, the banana shark: origins, anatomy, society and lore of the shy sea creature of the Brine Groves.">
+<style>
+  :root {
+    --bg: #fbfaf6;
+    --paper: #ffffff;
+    --text: #202122;
+    --muted: #54595d;
+    --border: #c8ccd1;
+    --soft: #eaecf0;
+    --link: #2a5db0;
+    --accent: #c9a227;
+    --infobox: #f8f9fa;
+    --head: #e6dfa8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141414;
+      --paper: #1c1c1c;
+      --text: #e8e6e3;
+      --muted: #a8a6a1;
+      --border: #3a3a3a;
+      --soft: #2a2a2a;
+      --link: #8ab4f8;
+      --accent: #e0bf4f;
+      --infobox: #232323;
+      --head: #4a4320;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header.site {
+    border-bottom: 1px solid var(--border);
+    background: var(--paper);
+    padding: 10px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  header.site .mark {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent); display: grid; place-items: center;
+    font-family: Georgia, serif; font-weight: bold; color: #222;
+  }
+  header.site .name { font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
+  header.site .name small { display: block; font-size: .75rem; color: var(--muted); font-family: inherit; }
+  main {
+    max-width: 1000px; margin: 0 auto; padding: 16px 16px 48px;
+    background: var(--paper); border-left: 1px solid var(--soft); border-right: 1px solid var(--soft);
+  }
+  h1, h2, h3 { font-family: Georgia, "Linux Libertine", "Times New Roman", serif; font-weight: normal; }
+  h1 { font-size: 2rem; margin: 8px 0 0; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+  .tagline { color: var(--muted); font-size: .85rem; margin: 4px 0 16px; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border); margin: 32px 0 8px; padding-bottom: 2px; clear: both; }
+  h3 { font-size: 1.15rem; font-weight: bold; font-family: inherit; margin: 20px 0 4px; }
+  .hatnote { font-style: italic; color: var(--muted); padding-left: 1.5em; margin: 0 0 8px; }
+
+  /* Infobox */
+  .infobox {
+    float: right; width: 290px; margin: 0 0 16px 20px;
+    border: 1px solid var(--border); background: var(--infobox);
+    font-size: .88rem; line-height: 1.45;
+  }
+  .infobox .title { background: var(--head); text-align: center; font-weight: bold; padding: 6px; font-size: 1.05rem; }
+  .infobox img { width: 100%; display: block; background: #fff; }
+  .infobox .caption { text-align: center; padding: 4px 8px 8px; color: var(--muted); font-size: .8rem; }
+  .infobox table { width: 100%; border-collapse: collapse; }
+  .infobox th { text-align: left; padding: 4px 8px; vertical-align: top; width: 42%; }
+  .infobox td { padding: 4px 8px; vertical-align: top; }
+  .infobox .sub { background: var(--head); text-align: center; font-weight: bold; padding: 4px; }
+  .status { text-align: center; padding: 6px 8px; }
+  .status b { display: block; }
+
+  /* Contents */
+  .toc {
+    display: inline-block; border: 1px solid var(--border); background: var(--infobox);
+    padding: 8px 16px 8px 8px; font-size: .9rem; margin: 8px 0 16px;
+  }
+  .toc .toc-title { font-weight: bold; text-align: center; margin-bottom: 4px; }
+  .toc ol { margin: 0; padding-left: 1.6em; }
+  .toc ol ol { padding-left: 1.3em; }
+
+  table.wikitable { border-collapse: collapse; margin: 12px 0; font-size: .92rem; width: 100%; }
+  .wikitable th, .wikitable td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; vertical-align: top; }
+  .wikitable th { background: var(--soft); }
+  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; border: 1px solid rgba(0,0,0,.2); }
+
+  blockquote { margin: 12px 0; padding: 4px 16px; border-left: 4px solid var(--accent); color: var(--muted); font-style: italic; }
+  sup.ref { font-size: .7rem; }
+  dl.glossary dt { font-weight: bold; margin-top: 10px; }
+  dl.glossary dd { margin: 0 0 0 1.5em; }
+  .index-cols { columns: 3 180px; font-size: .92rem; }
+  .index-cols .letter { font-weight: bold; font-family: Georgia, serif; font-size: 1.1rem; break-after: avoid; margin-top: 6px; }
+  .index-cols ul { list-style: none; padding: 0; margin: 0 0 6px; }
+  ol.refs { font-size: .88rem; }
+  .seealso { columns: 2 220px; }
+  footer {
+    max-width: 1000px; margin: 0 auto; padding: 16px; font-size: .8rem; color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 640px) {
+    .infobox { float: none; width: 100%; margin: 0 0 16px; }
+    h1 { font-size: 1.6rem; }
+    .toc { display: block; }
+    .wikitable { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="mark">B</div>
+  <div class="name">The Encyclopaedia of the Brine Groves<small>The compendium of deep-sea fruit fauna</small></div>
+</header>
+
+<main>
+  <h1 id="top">Banana shark</h1>
+  <p class="tagline">From the Encyclopaedia of the Brine Groves</p>
+  <p class="hatnote">"Big Yellow" redirects here. For the founder of the species, see <a href="#big-yellow">§ Big Yellow</a>.</p>
+
+  <aside class="infobox" aria-label="Species summary">
+    <div class="title">Banana shark</div>
+    <img src="banana-shark.webp" alt="A banana shark emerging from its peel, showing its grey head and rows of teeth">
+    <div class="caption">A mature yellow-stage banana shark partially emerged from its peel, one of very few images ever recorded</div>
+    <div class="status"><b>Conservation status</b>Unknown (rarely witnessed)</div>
+    <div class="sub">Scientific classification</div>
+    <table>
+      <tr><th>Kingdom</th><td>Animalia / Plantae (disputed)</td></tr>
+      <tr><th>Class</th><td>Chondrichthyes</td></tr>
+      <tr><th>Order</th><td>Musaselachiformes</td></tr>
+      <tr><th>Family</th><td>Musaselachidae</td></tr>
+      <tr><th>Genus</th><td><i>Musaselachus</i></td></tr>
+      <tr><th>Species</th><td><i>M. profundus</i></td></tr>
+    </table>
+    <div class="sub">Binomial name</div>
+    <div class="status"><i>Musaselachus profundus</i></div>
+    <div class="sub">Overview</div>
+    <table>
+      <tr><th>Habitat</th><td>Sea-floor banana groves (the <a href="#habitat">Brine Groves</a>)</td></tr>
+      <tr><th>Diet</th><td><a href="#diet">Blood oranges and strong-scented citrus</a></td></tr>
+      <tr><th>Society</th><td><a href="#society">Matriarchal</a>, led by Mother Trees</td></tr>
+      <tr><th>Founder</th><td><a href="#big-yellow">Big Yellow</a></td></tr>
+      <tr><th>Known foes</th><td><a href="#sea-monkeys">Sea monkeys</a></td></tr>
+    </table>
+  </aside>
+
+  <p>The <b>banana shark</b> (<i>Musaselachus profundus</i>) is a shy marine creature, part fruit and part shark, native to the great banana groves of the ocean floor. It is among the most rarely witnessed creatures in the world. Its mythology is extensive, and documented evidence is almost nonexistent. This is largely because of <a href="#the-forgetting">the Forgetting</a>, a progressive amnesia reported in nearly every person who has seen one.<sup class="ref"><a href="#ref1">[1]</a></sup></p>
+  <p>Banana sharks are born green from ancient <a href="#mother-trees">Mother Trees</a> and ripen over their lifetimes. Their colour marks both their age and their standing in a strictly matriarchal society. The rare <a href="#gold">gold-ripened</a> individuals serve as the colony's shamans and elders. Banana sharks are gentle and avoid contact, but they become fierce when provoked. Witnessing one is widely believed to bestow <a href="#blessing">the Yellow Blessing</a>, a lifelong good fortune that arrives in mysterious ways.</p>
+
+  <nav class="toc" aria-label="Contents">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#etymology">Etymology</a></li>
+      <li><a href="#origins">Origins</a>
+        <ol>
+          <li><a href="#kingdom">The Grove Kingdom</a></li>
+          <li><a href="#big-yellow">Big Yellow</a></li>
+        </ol>
+      </li>
+      <li><a href="#anatomy">Anatomy and physiology</a>
+        <ol>
+          <li><a href="#brinepeel">Brinepeel</a></li>
+          <li><a href="#scent">Scent</a></li>
+        </ol>
+      </li>
+      <li><a href="#lifecycle">Life cycle and ripening</a></li>
+      <li><a href="#society">Society</a>
+        <ol>
+          <li><a href="#mother-trees">The Mother Trees</a></li>
+          <li><a href="#gold">The Gold: shamans and elders</a></li>
+        </ol>
+      </li>
+      <li><a href="#habitat">Habitat</a></li>
+      <li><a href="#diet">Diet</a></li>
+      <li><a href="#behaviour">Behaviour</a></li>
+      <li><a href="#sea-monkeys">Predators and rivals</a></li>
+      <li><a href="#human">Encounters with humans</a>
+        <ol>
+          <li><a href="#blessing">The Yellow Blessing</a></li>
+          <li><a href="#the-forgetting">The Forgetting</a></li>
+        </ol>
+      </li>
+      <li><a href="#glossary">Glossary</a></li>
+      <li><a href="#see-also">See also</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#index">Index</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="etymology">Etymology</h2>
+  <p>The genus name <i>Musaselachus</i> joins <i>Musa</i>, the genus of the banana plant, with <i>selachus</i>, from the Greek word for shark. The species name <i>profundus</i> is Latin for "deep" and refers to the species' sea-floor home. Coastal peoples have known it by many folk names, most of which translate to "the one you will not remember."<sup class="ref"><a href="#ref2">[2]</a></sup></p>
+
+  <h2 id="origins">Origins</h2>
+  <h3 id="kingdom">The Grove Kingdom</h3>
+  <p>According to tradition, the banana sharks come from the <b>Grove Kingdom</b>, a vast forest of banana trees on the ocean floor, far below the reach of sunlight. The groves are said to stretch for leagues and to be older than any kingdom on land. In this kingdom, the trees themselves are the rulers. They are long-lived matriarchs whose roots draw life from the seabed and pass it on to the colonies that shelter among them.</p>
+
+  <h3 id="big-yellow">Big Yellow</h3>
+  <p><b>Big Yellow</b> is the legendary first banana shark and the founder of the species. Accounts agree that Big Yellow was the first fruit to ripen on the oldest Mother Tree, and that Big Yellow was the first to break free of the branch and swim. Every colony traces its descent from Big Yellow, and the gold elders still invoke the name in their rites.</p>
+  <blockquote>"First of the bunch, first of the deep. What Big Yellow saw, the Groves still keep."<br>— traditional grove saying<sup class="ref"><a href="#ref3">[3]</a></sup></blockquote>
+
+  <h2 id="anatomy">Anatomy and physiology</h2>
+  <p>The banana shark has the elongated grey head, dark eyes and many-rowed teeth of a true shark. Its body is housed within a thick banana peel. When the animal is relaxed or feeding, the peel opens partway into loose petals, and when it senses danger it closes tight. The skin beneath the peel is pale grey and finely textured.</p>
+  <h3 id="brinepeel">Brinepeel</h3>
+  <p>An ordinary banana quickly rots in seawater. The banana shark does not. Its fruit tissue bonds with the salt of the ocean, a process scholars call <b>saline fusion</b>, and produces <b>brinepeel</b>, a dense, water-resistant hide. Brinepeel lets banana sharks live their entire lives submerged. Exactly how this fusion works is still unknown.</p>
+  <h3 id="scent">Scent</h3>
+  <p>Banana sharks give off a powerful, sweet banana odour that carries far through the water. Most marine creatures find it repellent, and the scent is the species' main defence. It is also the main reason banana sharks are so seldom disturbed.</p>
+
+  <h2 id="lifecycle">Life cycle and ripening</h2>
+  <p>Banana sharks are not born from eggs. They grow as fruit on the branches of the Mother Trees and detach when they are ready to swim. Their colour changes as they age, and each stage of ripeness matches a fixed role in society.</p>
+  <table class="wikitable">
+    <thead><tr><th>Stage</th><th>Colour</th><th>Age</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td><b>Greenling</b></td><td><span class="swatch" style="background:#7fa83a"></span>Green</td><td>Newborn and young</td><td>Juveniles who stay close to their Mother Tree and learn the ways of the grove</td></tr>
+      <tr><td><b>Yellow</b></td><td><span class="swatch" style="background:#f2cf3a"></span>Yellow</td><td>Adult</td><td>The main body of the colony: foragers, guardians and the ones most likely to be seen by humans</td></tr>
+      <tr><td><b>Gold</b></td><td><span class="swatch" style="background:#c9a227"></span>Gold</td><td>Elder</td><td>Shamans and elders. Very rare, and only a few exist in any colony at one time.</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="society">Society</h2>
+  <p>Banana shark society is <b>matriarchal</b>. Power, lineage and life itself flow from the Mother Trees. Each colony grows around a single tree and is organised by stage of ripeness. Ripeness, not size or strength, decides a banana shark's place.</p>
+  <h3 id="mother-trees">The Mother Trees</h3>
+  <p>The <b>Mother Trees</b> are enormous, extraordinarily long-lived banana trees rooted in the sea floor. They give birth to every banana shark and keep providing for their colonies across many generations. A Mother Tree may outlive countless generations of her offspring. Some are said to have stood since the time of Big Yellow.</p>
+  <h3 id="gold">The Gold: shamans and elders</h3>
+  <p>Only a few banana sharks ever ripen to gold. These <b>Gold</b> serve as the shamans and elders of the colony, keep its memory and traditions, and are believed to speak for the Mother Trees. Their colour is considered the highest honour in banana shark society.</p>
+
+  <h2 id="habitat">Habitat</h2>
+  <p>Banana sharks live only in the ocean, in the deep sea-floor groves sometimes called the <b>Brine Groves</b>. They rarely travel far from their Mother Tree. The location of the Grove Kingdom has never been confirmed.</p>
+
+  <h2 id="diet">Diet</h2>
+  <p>Banana sharks feed on <b>blood oranges</b> and other citrus fruits with strong scents. They are thought to track drifting fruit by smell across great distances. Blood oranges are the most prized food, and some accounts say they are reserved for the Gold.</p>
+
+  <h2 id="behaviour">Behaviour</h2>
+  <p>Banana sharks are extremely shy and avoid all contact with other species, humans especially. They are gentle by nature. When provoked or cornered, though, they become fierce, and their teeth are fully those of a shark. No unprovoked attack has ever been recorded.</p>
+
+  <h2 id="sea-monkeys">Predators and rivals</h2>
+  <p>The only known enemies of the banana shark are <b>sea monkeys</b>, which are drawn to the groves by the fruit. Even sea monkeys usually keep their distance because of the banana shark's repellent scent. Adult banana sharks are therefore mostly left alone.</p>
+
+  <h2 id="human">Encounters with humans</h2>
+  <h3 id="blessing">The Yellow Blessing</h3>
+  <p>To witness a banana shark is said to bring the <b>Yellow Blessing</b>, a lifelong good fortune. The blessing seldom works in obvious ways. Its recipients tell of strange luck, timely coincidences and misfortunes that somehow pass them by. Sailors have long regarded a sighting as the greatest omen the sea can give.</p>
+  <h3 id="the-forgetting">The Forgetting</h3>
+  <p>Almost everyone who receives the Yellow Blessing eventually develops a gradual amnesia known as <b>the Forgetting</b>. Over time, all memory of the encounter fades, though the blessing itself appears to remain. This is why first-hand accounts are so scarce, and why the species is still poorly understood. Some scholars suspect the Forgetting is how the banana sharks protect the location of the Grove Kingdom.<sup class="ref"><a href="#ref1">[1]</a></sup></p>
+
+  <h2 id="glossary">Glossary</h2>
+  <dl class="glossary">
+    <dt id="g-big-yellow">Big Yellow</dt><dd>The legendary first banana shark and founder of the species. See <a href="#big-yellow">§ Big Yellow</a>.</dd>
+    <dt id="g-brinepeel">Brinepeel</dt><dd>The water-resistant hide formed when banana tissue fuses with sea salt.</dd>
+    <dt id="g-brine-groves">Brine Groves</dt><dd>The sea-floor banana forests where banana sharks live. Also called the Grove Kingdom.</dd>
+    <dt id="g-colony">Colony</dt><dd>A community of banana sharks gathered around a single Mother Tree.</dd>
+    <dt id="g-forgetting">The Forgetting</dt><dd>The gradual amnesia that erases a witness's memory of a banana shark encounter.</dd>
+    <dt id="g-gold">Gold</dt><dd>The rarest ripeness stage. Gold banana sharks are the colony's shamans and elders.</dd>
+    <dt id="g-greenling">Greenling</dt><dd>A young, unripe banana shark.</dd>
+    <dt id="g-mother-tree">Mother Tree</dt><dd>An ancient sea-floor banana tree that births and sustains a colony.</dd>
+    <dt id="g-saline-fusion">Saline fusion</dt><dd>The process by which banana tissue bonds with seawater salt to form brinepeel.</dd>
+    <dt id="g-sea-monkey">Sea monkey</dt><dd>The banana shark's only known enemy.</dd>
+    <dt id="g-yellow">Yellow</dt><dd>The adult ripeness stage, making up most of a colony.</dd>
+    <dt id="g-yellow-blessing">Yellow Blessing</dt><dd>The lifelong, mysterious good fortune granted to those who witness a banana shark.</dd>
+  </dl>
+
+  <h2 id="see-also">See also</h2>
+  <ul class="seealso">
+    <li><a href="#big-yellow">Big Yellow</a></li>
+    <li><a href="#mother-trees">Mother Trees</a></li>
+    <li><a href="#the-forgetting">The Forgetting</a></li>
+    <li><a href="#blessing">The Yellow Blessing</a></li>
+    <li><a href="#sea-monkeys">Sea monkeys</a></li>
+    <li><a href="#kingdom">The Grove Kingdom</a></li>
+  </ul>
+
+  <h2 id="references">References</h2>
+  <ol class="refs">
+    <li id="ref1">Unknown author (date forgotten). <i>Notes on a Thing I Saw Beneath the Waves</i>. Manuscript, final pages blank.</li>
+    <li id="ref2">Compendium of Coastal Folk Names, vol. II, "Creatures of the Deep Fruit."</li>
+    <li id="ref3">Oral tradition of the Gold elders, as recorded by an unnamed sailor shortly before the Forgetting took hold.</li>
+  </ol>
+
+  <h2 id="index">Index</h2>
+  <div class="index-cols">
+    <div class="letter">A</div>
+    <ul><li><a href="#anatomy">Anatomy</a></li></ul>
+    <div class="letter">B</div>
+    <ul>
+      <li><a href="#behaviour">Behaviour</a></li>
+      <li><a href="#big-yellow">Big Yellow</a></li>
+      <li><a href="#blessing">Blessing, Yellow</a></li>
+      <li><a href="#diet">Blood oranges</a></li>
+      <li><a href="#habitat">Brine Groves</a></li>
+      <li><a href="#brinepeel">Brinepeel</a></li>
+    </ul>
+    <div class="letter">C</div>
+    <ul>
+      <li><a href="#diet">Citrus</a></li>
+      <li><a href="#society">Colonies</a></li>
+      <li><a href="#lifecycle">Colour stages</a></li>
+    </ul>
+    <div class="letter">D</div>
+    <ul><li><a href="#diet">Diet</a></li></ul>
+    <div class="letter">E</div>
+    <ul>
+      <li><a href="#gold">Elders</a></li>
+      <li><a href="#etymology">Etymology</a></li>
+    </ul>
+    <div class="letter">F</div>
+    <ul><li><a href="#the-forgetting">Forgetting, the</a></li></ul>
+    <div class="letter">G</div>
+    <ul>
+      <li><a href="#gold">Gold</a></li>
+      <li><a href="#lifecycle">Greenling</a></li>
+      <li><a href="#kingdom">Grove Kingdom</a></li>
+    </ul>
+    <div class="letter">H</div>
+    <ul>
+      <li><a href="#habitat">Habitat</a></li>
+      <li><a href="#human">Humans, encounters with</a></li>
+    </ul>
+    <div class="letter">L</div>
+    <ul><li><a href="#lifecycle">Life cycle</a></li></ul>
+    <div class="letter">M</div>
+    <ul>
+      <li><a href="#society">Matriarchy</a></li>
+      <li><a href="#the-forgetting">Memory loss</a></li>
+      <li><a href="#mother-trees">Mother Trees</a></li>
+      <li><a href="#etymology"><i>Musaselachus profundus</i></a></li>
+    </ul>
+    <div class="letter">P</div>
+    <ul><li><a href="#sea-monkeys">Predators</a></li></ul>
+    <div class="letter">R</div>
+    <ul><li><a href="#lifecycle">Ripening</a></li></ul>
+    <div class="letter">S</div>
+    <ul>
+      <li><a href="#brinepeel">Saline fusion</a></li>
+      <li><a href="#scent">Scent</a></li>
+      <li><a href="#sea-monkeys">Sea monkeys</a></li>
+      <li><a href="#gold">Shamans</a></li>
+      <li><a href="#society">Society</a></li>
+    </ul>
+    <div class="letter">Y</div>
+    <ul>
+      <li><a href="#lifecycle">Yellow (stage)</a></li>
+      <li><a href="#blessing">Yellow Blessing</a></li>
+    </ul>
+  </div>
+
+  <p style="margin-top:32px"><a href="#top">↑ Back to top</a></p>
+</main>
+
+<footer>
+  The Encyclopaedia of the Brine Groves is a work of collaborative fiction. Entries are added as the lore is uncovered, and before the Forgetting sets in.
+</footer>
+
+</body>
+</html>
